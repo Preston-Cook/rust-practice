@@ -38,7 +38,7 @@ fn main() {
             index_to_day(i)
         );
         if i == 0 {
-            stanza = format!("{}A Partridge in a pear tree", stanza);
+            stanza = format!("{}\nA Partridge in a pear tree", stanza);
         } else {
             let mut items = lyrics[0..i as usize + 1].to_vec();
             items.reverse();
