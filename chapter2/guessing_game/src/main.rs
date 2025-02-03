@@ -4,7 +4,7 @@ use std::{
 };
 
 fn main() {
-    let secret_num: i32 = rand::random_range(1..=100);
+    let secret_num = rand::random_range(1..=100);
 
     let mut guess: String;
 
