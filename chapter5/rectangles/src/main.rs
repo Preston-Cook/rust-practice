@@ -5,12 +5,12 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    fn can_hold(&self, other: &Rectangle) -> bool {
-        self.width >= other.width && self.height >= other.height
-    }
-
     fn area(&self) -> u32 {
         self.width * self.height
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width >= other.width && self.height >= other.height
     }
 }
 
@@ -25,7 +25,13 @@ fn main() {
         height: 10,
     };
 
-    let res = rect1.can_hold(&rect2);
+    let rect3 = Rectangle {
+        width: 60,
+        height: 45,
+    };
+
+    let res1 = rect1.can_hold(&rect2);
+    let res2 = rect1.can_hold(&rect3);
 
     let area1 = rect1.area();
     let area2 = rect2.area();
@@ -33,5 +39,6 @@ fn main() {
     println!("Area 1: {area1}");
     println!("Area 2: {area2}");
 
-    println!("{res}");
+    println!("Can rect1 hold rect2?: {res1}");
+    println!("Can rect1 hold rect3?: {res2}")
 }
